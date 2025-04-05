@@ -25,4 +25,4 @@ def test_palindrome_input():
 def test_stop_command():
     ohce = Ohce(user="User")
     result = ohce.process("Stop!")
-    assert result == "¡Adiós User!"
+    assert result == "Adios User"

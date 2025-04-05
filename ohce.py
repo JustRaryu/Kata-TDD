@@ -1,4 +1,5 @@
 from datetime import datetime
+import argparse
 
 class Ohce:
     def __init__(self, user="Usuario", hour=None):
@@ -21,8 +22,23 @@ class Ohce:
 
     def process(self, text):
         if text == "Stop!":
-            return f"¡Adiós {self.user}!"
+            return f"Adios {self.user}"
         reversed_text = self.reverse(text)
         if self.is_palindrome(text):
             return f"{reversed_text}\n¡Bonita palabra!"
         return reversed_text
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("user", type=str)
+    args = parser.parse_args()
+
+    ohce = Ohce(user=args.user)
+    print(ohce.greet())
+
+    while True:
+        user_input = input()
+        if user_input == "Stop!":
+            print(ohce.process(user_input))
+            break
+        print(ohce.process(user_input))
