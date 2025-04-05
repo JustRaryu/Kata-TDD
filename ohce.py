@@ -15,6 +15,12 @@ class Ohce:
         
     def reverse(self, text):
         return text[::-1]
+    
+    def is_palindrome(self, text):
+        return text == text[::-1]
 
     def process(self, text):
-        return self.reverse(text)
+        reversed_text = self.reverse(text)
+        if self.is_palindrome(text):
+            return f"{reversed_text}\n¡Bonita palabra!"
+        return reversed_text
