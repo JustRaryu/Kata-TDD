@@ -16,3 +16,8 @@ def test_greeting_buenas_tardes():
 def test_greeting_buenas_noches():
     ohce = Ohce(user="User", hour=22)
     assert ohce.greet() == "¡Buenas noches User!"
+
+def test_palindrome_input():
+    ohce = Ohce()
+    result = ohce.process("madam")
+    assert result == "madam\n¡Bonita palabra!"
