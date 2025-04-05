@@ -24,5 +24,5 @@ class Ohce:
             return f"¡Adiós {self.user}!"
         reversed_text = self.reverse(text)
         if self.is_palindrome(text):
-            return f"{reversed_text}\n¡Bien dicho!"
+            return f"{reversed_text}\n¡Bonita palabra!"
         return reversed_text
