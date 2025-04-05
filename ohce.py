@@ -20,7 +20,9 @@ class Ohce:
         return text == text[::-1]
 
     def process(self, text):
+        if text == "Stop!":
+            return f"¡Adiós {self.user}!"
         reversed_text = self.reverse(text)
         if self.is_palindrome(text):
-            return f"{reversed_text}\n¡Bonita palabra!"
+            return f"{reversed_text}\n¡Bien dicho!"
         return reversed_text
